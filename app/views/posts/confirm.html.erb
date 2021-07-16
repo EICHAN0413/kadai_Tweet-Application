@@ -1,13 +1,14 @@
 <h3 class='header'>以下の内容で投稿しますか？</h3>
 <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
   
-  <div class="form>
-  <%= form.hidden_field :name %>
-  <%= form.hidden_field :content %>
+  <div class="form">
 
   <p>名前:<%= @post.name %></p>
+  <%= form.hidden_field :name %>
+
   <p>本文:<%= @post.content %></p>
-  
+  <%= form.hidden_field :content %>
+
   <div class="btn">
   <%= form.submit  "登録する" %>
   <%= form.submit "戻る", name: 'back' %>
